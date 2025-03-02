@@ -5,37 +5,52 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.2</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>3.3.4</version>
     </parent>
     <groupId>com.study</groupId>
     <artifactId>experiment</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>experiment</name>
+    <name>init-experiment-parent</name>
+    <modules>
+        <module>services</module>
+        <module>common</module>
+    </modules>
+    <packaging>pom</packaging>
     <description>experiment</description>
     <properties>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.targer>21</maven.compiler.targer>
+        <spring-cloud.version>2023.0.3</spring-cloud.version>
+        <spring-cloud-alibaba.version>2023.0.3.2</spring-cloud-alibaba.version>
     </properties>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <addResources>true</addResources>
+                </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
