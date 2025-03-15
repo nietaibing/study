@@ -10,7 +10,7 @@
     <groupId>com.study</groupId>
     <artifactId>experiment</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>init-experiment-parent</name>
+    <name>experiment-parent</name>
     <modules>
         <module>services</module>
         <module>common</module>
@@ -29,7 +29,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
+                <version>2023.0.3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
