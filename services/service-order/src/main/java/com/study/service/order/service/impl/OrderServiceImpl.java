@@ -37,7 +37,7 @@ public class OrderServiceImpl implements IOrderService {
         Order order = new Order();
         order.setOrderId("1");
         order.setTotalAmount(product.getProductPrice().multiply(new BigDecimal(product.getNum())));
-        order.setUserId("userId");
+        order.setUserId(userId);
         order.setNickName("秦人京客");
         order.setAddress("杭州市萧山区");
         order.setProducts(List.of(product));

@@ -7,5 +7,8 @@ spring:
     nacos:
       discovery: #启用 spring cloud nacos discovery
         server-addr: 127.0.0.1:8848
+      config:
+        import-check:
+          enabled: false
 server:
   port: 9000
